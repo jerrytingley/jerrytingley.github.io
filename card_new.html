@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+SHEEEEEEEIIIIITTTTTTTT
+</title>
+<link href='http://fonts.googleapis.com/css?family=Mrs+Saint+Delafield' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="card.css">
+<link rel="stylesheet" href="js/deck.core.css">
+<link rel="stylesheet" href="js/horizontal-slide.css">
+<link rel="stylesheet" media="screen" href="js/deck.menu.css">
+<link rel="stylesheet" media="screen" href="js/deck.navigation.css">
+<script src="js/modernizr.custom.js"></script>
+<script>
+function indeed() {
+	document.getElementById('indeed').play();
+}
+function reveal() {
+	indeed();
+	innerHTML  = '<div>OH</div>';
+	innerHTML += '<img src="adam.png" onclick="indeed()"> ';
+	innerHTML += '<div>INDEED</div>';
+	innerHTML += '<i class="sign"> Happy Birthday Tough Guy </i> <br/>';
+	innerHTML += '<i class="sign"> -- Jerry </i>';
+	document.getElementById('adam').innerHTML = innerHTML;
+}
+</script>
+</head>
+<body>
+
+<section class="slide">
+	<img class="side side-left" src="side-left.gif">
+	<img class="side side-right" src="side-right.gif">
+	<div>
+		Sheeiiittt partner <br/>
+		<br/><img src="adam.png"> <br/>
+		<br/>it's yo birthday?
+	</div>
+</section>
+
+<section class="slide">
+	<audio id="indeed" src="indeed.mp3" preload="auto"> </audio>
+	<img style="float:left;" src="omar walkin.png">
+	<img style="float:right;" src="omar walkin right.png">
+	<div id="adam" class="adam">
+		<img src="adam.png" onclick="reveal()">
+	</div>
+</section>
+<script src="js/jquery.min.js"></sc<script src="extensions/menu/deck.menu.js"></script>
+ript>
+<script src="js/deck.core.js"></script>
+<script src="js/deck.menu.js"></script>
+<script src="js/deck.navigation.js"></script>
+
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>
+SHEEEEEEEIIIIITTTTTTTT
+</title>
+<link rel="stylesheet" href="card.css" />
+<script>
+
+function indeed() {
+	document.getElementById('indeed').play();
+}
+
+function reveal() {
+	indeed();
+	innerHTML  = '<div>OH</div>';
+	innerHTML += '<img src="adam.png" onclick="indeed()"> ';
+	innerHTML += '<div>INDEED</div>';
+	document.getElementById('adam').innerHTML = innerHTML;
+}
+
+</script>
+</head>
+<body>
+	<audio id="indeed" src="indeed.mp3" preload="auto"> </audio>
+	<img style="float:left;" src="omar walkin.png">
+	<img style="float:right;" src="omar walkin right.png">
+	<div id="adam" class="adam">
+		<img src="adam.png" onclick="reveal()">
+	</div>
+</body>
+</html>
