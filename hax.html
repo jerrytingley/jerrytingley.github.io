@@ -14,6 +14,30 @@
     <button v-on:click="get_barcode"> Get Barcode </button>
     <br/>
     <img v-bind:src='barcode_src'>
+    <table class="striped">
+    <caption> Common PLU's </caption>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Code </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td> SB Cheddar GNG </td>
+            <td> 27076500 </td>
+        </tr>
+        <tr>
+            <td> SB Hard Salami GNG </td>
+            <td> 24192900 </td>
+        </tr>
+        <tr>
+            <td> Yesterday's Bagels </td>
+            <td> 20884920 </td>
+        </tr>
+    </tbody>
+</table>
 </div>
 </body>
 <script>
