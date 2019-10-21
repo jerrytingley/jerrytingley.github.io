@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title> hax </title>
+</head>
+<body>
+<div id="container">
+    <h1> Hello, Mr. Anderson </h1>
+    <input type="text" v-model="item_code">
+    <input type="text" v-model="price">
+    <button v-on:click="get_barcode"> Get Barcode </button>
+    <br/>
+    <img v-bind:src='barcode_src'>
+</div>
+</body>
+<script>
+
+function get_check_digit(code) {
+    var result = 0
+    for(var i = 0; i < 12; i += 2) {
+        result += parseInt(code[i])
+    }
+    result *= 3
+    for(var i = 1; i < 11; i += 2) {
+        result += parseInt(code[i])
+    }
+    result %= 10
+
+    if(result == 0) return 0
+    return 10 - result
+}
+
+function make_barcode(plu, price) {
+    var barcode = plu + price
+    var check_digit = get_check_digit(barcode)
+    return barcode + check_digit
+}
+
+new Vue({
+    el: '#container',
+    data: {
+        item_code: '',
+        price: 0,
+        barcode_src: ''
+    },
+    methods: {
+        get_barcode: function() {
+            var barcode = make_barcode(this.item_code, this.price)
+            console.log(barcode)
+
+            this.barcode_src = 'https://barcode.tec-it.com/barcode.ashx?data=' + 
+                barcode + '&code=UPCA&dpi=96';
+        }
+    }
+});
+
+</script>
+</!DOCTYPE>
